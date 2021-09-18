@@ -1,0 +1,17 @@
+<div class="container">  
+  <p id="<%= category.id%>">
+    <p><strong><%= category.name %></strong>
+      <% if category.parent_category 
+          category.parent_category
+        else
+          'No tiene categoria padre'
+        end 
+      %>
+    </p>
+      <p>
+      <%= link_to 'Show', category, remote: true, class: "btn btn-light" %>
+      <%= link_to 'Edit', edit_category_path(category), remote: true, class: "btn btn-light" %>
+      <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Estás seguro?' }, class: "btn btn-light"  %>
+      </p><hr>
+  </p>
+</div>
